@@ -2,6 +2,7 @@ server:
   port: 8100
 
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     rce:
       path: /rce/**
@@ -11,7 +12,7 @@ zuul:
     content:
       url: http://localhost:8083
     auth:
-      url: http://localhost:8081
+      url: http://localhost:4000
 
   host:
     connect-timeout-millis: 2000
@@ -26,3 +27,10 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: 0cec2ac0c09602448541f423f31e5d4fc2c6e040
