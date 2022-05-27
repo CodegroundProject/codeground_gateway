@@ -1,0 +1,28 @@
+server:
+  port: 8100
+
+zuul:
+  routes:
+    rce:
+      path: /rce/**
+      url: http://localhost:5000
+    rooms:
+      url: http://localhost:8082
+    content:
+      url: http://localhost:8083
+    auth:
+      url: http://localhost:8081
+
+  host:
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 5000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
