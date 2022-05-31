@@ -8,11 +8,14 @@ zuul:
       path: /rce/**
       url: http://localhost:5000
     rooms:
-      url: http://localhost:8082
+      path: /rooms/**
+      url: http://localhost:5001
     content:
-      url: http://localhost:8083
+      path: /content/**
+      url: http://localhost:5002
     auth:
-      url: http://localhost:4000
+      path: /auth/**
+      url: http://localhost:5003
 
   host:
     connect-timeout-millis: 2000
